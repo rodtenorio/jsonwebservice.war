@@ -34,7 +34,7 @@ public class JsonWebService {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
     public Response doTask(final Pessoa pessoa) {
-        pessoa.setNome("Mudei pra JSON =)");
+        pessoa.setNome("Teste de post como Object");
 
         final ObjectMapper om = new ObjectMapper();
         String result;
@@ -58,7 +58,7 @@ public class JsonWebService {
         JSONObject jsonObject;
         try {
             jsonObject = new JSONObject(pessoa);
-            jsonObject.put("servidor", "Recebi isto.");
+            jsonObject.put("nome", "Teste de post como String");
         } catch (final JSONException e) {
             throw new RuntimeException(e);
         }
